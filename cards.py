@@ -126,13 +126,13 @@ class Hand:
                     else:
                         return    ("Straight", poker_combinations["Straight"]) 
                 if not consecutive:
-                    if values[0] == 1:
-                        return ("High Card", 13)
-                    else :
-                        return("High Card", max(values))
+                   return("High Card", poker_combinations["High Card"])
        
-    def repeat_cards(self):
-        pass
+     def get_max_value(self):
+        values_hand = self.get_values_hand()
+        _, values = zip(*values_hand)
+        values = sorted(values)
+        return max(values)
 
 deck = Deck()
 deck.shuffle_deck()
